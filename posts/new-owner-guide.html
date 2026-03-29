@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The New Owner's Complete Guide to Golden Retrievers — Golden Paws</title>
+  <meta name="description" content="Everything new Golden Retriever owners need to know — from health issues and training tips to grooming schedules and diet advice. Your complete Golden Retriever care guide." />
+  <link rel="canonical" href="posts/new-owner-guide.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --gold: #D4872A; --gold-light: #F5C96A; --gold-pale: #FDF6E3;
+      --brown: #7A4A1E; --dark: #2C1A0E; --text: #3D2B1A; --muted: #8C6A4A;
+      --white: #FFFFFF; --radius: 12px;
+    }
+    body { font-family: 'Inter', sans-serif; background: var(--white); color: var(--text); line-height: 1.8; }
+
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--white); border-bottom: 2px solid var(--gold-light);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 5%; height: 70px;
+    }
+    .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--gold); text-decoration: none; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { text-decoration: none; color: var(--text); font-weight: 500; font-size: .95rem; transition: color .2s; }
+    .nav-links a:hover { color: var(--gold); }
+
+    .post-hero {
+      background: linear-gradient(135deg, #FDF0D5, #F9D98B);
+      padding: 64px 5% 48px;
+      text-align: center;
+    }
+    .breadcrumb { font-size: .82rem; color: var(--muted); margin-bottom: 16px; }
+    .breadcrumb a { color: var(--gold); text-decoration: none; }
+    .post-tags { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-bottom: 20px; }
+    .tag {
+      background: var(--gold); color: var(--white);
+      font-size: .72rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase;
+      padding: 4px 12px; border-radius: 20px;
+    }
+    .tag.outline { background: transparent; border: 2px solid var(--gold); color: var(--gold); }
+    .post-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      color: var(--dark); line-height: 1.25; margin-bottom: 20px; max-width: 760px; margin-left: auto; margin-right: auto;
+    }
+    .post-meta-bar { color: var(--muted); font-size: .9rem; }
+    .post-meta-bar span { margin: 0 8px; }
+
+    .post-layout {
+      max-width: 1100px; margin: 0 auto; padding: 60px 5%;
+      display: grid; grid-template-columns: 1fr 300px; gap: 60px;
+    }
+
+    article h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.55rem; color: var(--dark);
+      margin: 48px 0 16px; padding-bottom: 10px;
+      border-bottom: 2px solid var(--gold-light);
+    }
+    article h3 { font-size: 1.1rem; color: var(--brown); margin: 28px 0 10px; }
+    article p { margin-bottom: 18px; font-size: 1rem; }
+    article strong { color: var(--dark); }
+    article ul, article ol { margin: 0 0 18px 24px; }
+    article li { margin-bottom: 8px; font-size: 1rem; }
+    article hr { border: none; border-top: 2px solid var(--gold-pale); margin: 40px 0; }
+
+    .intro-box {
+      background: var(--gold-pale); border-left: 4px solid var(--gold);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 20px 24px; margin-bottom: 32px;
+      font-size: .95rem; color: var(--brown);
+    }
+
+    .faq-item { margin-bottom: 24px; }
+    .faq-q { font-weight: 600; color: var(--dark); margin-bottom: 6px; font-size: 1rem; }
+    .faq-a { font-size: .95rem; color: var(--text); }
+
+    /* SIDEBAR */
+    aside { position: sticky; top: 90px; align-self: start; }
+    .sidebar-card {
+      background: var(--gold-pale); border-radius: var(--radius);
+      border: 1px solid #EDD9B0; padding: 24px; margin-bottom: 24px;
+    }
+    .sidebar-card h4 {
+      font-family: 'Playfair Display', serif; font-size: 1.05rem;
+      color: var(--dark); margin-bottom: 14px;
+    }
+    .toc-list { list-style: none; }
+    .toc-list li { margin-bottom: 8px; }
+    .toc-list a { text-decoration: none; color: var(--brown); font-size: .88rem; transition: color .2s; }
+    .toc-list a:hover { color: var(--gold); }
+    .related-list { list-style: none; }
+    .related-list li { margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px solid #EDD9B0; }
+    .related-list li:last-child { border-bottom: none; }
+    .related-list a { text-decoration: none; color: var(--brown); font-size: .88rem; font-weight: 500; }
+    .related-list a:hover { color: var(--gold); }
+
+    footer { background: var(--dark); color: #9A7A5A; text-align: center; padding: 36px 5%; font-size: .9rem; }
+    .footer-logo { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--gold-light); margin-bottom: 12px; }
+    footer a { color: var(--gold-light); text-decoration: none; }
+
+    @media (max-width: 900px) {
+      .post-layout { grid-template-columns: 1fr; }
+      aside { position: static; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="../index.html" class="nav-logo">🐾 Golden Paws</a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../blog.html">Blog</a></li>
+      <li><a href="../index.html#topics">Topics</a></li>
+    </ul>
+  </nav>
+
+  <div class="post-hero">
+    <p class="breadcrumb"><a href="../index.html">Home</a> › <a href="../blog.html">Blog</a> › Care Guide</p>
+    <div class="post-tags">
+      <span class="tag">Care Guide</span>
+      <span class="tag outline">Health</span>
+      <span class="tag outline">Training</span>
+      <span class="tag outline">Grooming</span>
+    </div>
+    <h1>The New Owner's Complete Guide to Golden Retrievers: Health, Training & Care Tips</h1>
+    <p class="post-meta-bar">
+      March 2026
+      <span>·</span> 5 min read
+      <span>·</span> Golden Paws
+    </p>
+  </div>
+
+  <div class="post-layout">
+    <article>
+
+      <div class="intro-box">
+        Bringing a Golden Retriever into your life is one of the best decisions you'll ever make. They're loyal, playful, endlessly affectionate — and yes, they shed everywhere. But with the right knowledge, raising a happy and healthy Golden is easier than you think.
+      </div>
+
+      <h2 id="health">Understanding Your Golden's Health</h2>
+      <p>Golden Retrievers are generally healthy dogs, but they do have a few breed-specific vulnerabilities worth knowing about.</p>
+      <p><strong>Hip dysplasia</strong> is one of the most common issues, affecting the hip joint and potentially causing pain or mobility problems in older dogs. The best prevention is maintaining a healthy weight and providing regular, low-impact exercise like swimming.</p>
+      <p><strong>Cancer</strong> is, unfortunately, more prevalent in Goldens than in most other breeds — studies suggest over 60% of Golden Retrievers are affected. Annual wellness exams are critical for early detection. Don't skip them.</p>
+      <p><strong>Ear infections</strong> are another frequent concern. Those beautiful floppy ears trap moisture, creating a warm breeding ground for bacteria and yeast. Clean your dog's ears at least once a month — and always after swimming — using a vet-approved ear cleaner.</p>
+      <p><strong>Allergies</strong> — both food and environmental — can show up as itching, skin irritation, or recurring ear problems. If your Golden seems perpetually itchy, it's worth discussing with your vet.</p>
+      <p>With proper care, Golden Retrievers live an average of <strong>10–12 years</strong>. The investments you make in their health early pay dividends throughout their life.</p>
+
+      <h2 id="nutrition">Feeding Your Golden Right</h2>
+      <p>The best diet for a Golden Retriever is high-quality, protein-rich, and formulated for large breeds. Look for real meat as the first ingredient and avoid fillers like corn syrup or artificial preservatives.</p>
+      <p>Portion control matters — Goldens love food and will happily overeat. Use feeding guidelines on your food packaging as a starting point, then adjust based on your dog's weight and activity level. Obesity is a serious risk factor for hip problems and heart disease, so keep those treats in check (even when they give you <em>that</em> look).</p>
+
+      <h2 id="exercise">Exercise: A Tired Golden is a Happy Golden</h2>
+      <p>Golden Retrievers are sporting dogs at heart. They need <strong>at least one to two hours of exercise daily</strong>, spread across walks, playtime, and training sessions.</p>
+      <p>The best activities for Goldens include:</p>
+      <ul>
+        <li><strong>Daily walks</strong> — aim for at least 30–45 minutes in the morning</li>
+        <li><strong>Swimming</strong> — Goldens are natural water dogs and swimming is easy on their joints</li>
+        <li><strong>Fetch</strong> — a classic for a reason; it burns energy fast and they never seem to tire of it</li>
+        <li><strong>Hiking</strong> — great for mental stimulation alongside physical exercise</li>
+      </ul>
+      <p>Mental exercise matters too. Puzzle feeders, training sessions, and new environments keep their minds sharp and prevent boredom-driven mischief.</p>
+
+      <h2 id="training">Training: Start Early, Stay Positive</h2>
+      <p>The good news: Golden Retrievers are among the most trainable dog breeds in the world. They are eager to please and respond beautifully to positive reinforcement.</p>
+      <p><strong>Start training the day you bring them home.</strong> The critical socialization window is 8–16 weeks — expose your puppy to new people, sounds, environments, and other dogs during this period. Early socialization shapes a confident, well-mannered adult dog.</p>
+      <p>Focus on these basics first:</p>
+      <ul>
+        <li><em>Sit</em> — the foundation of all other commands</li>
+        <li><em>Come</em> — a safety essential</li>
+        <li><em>Drop it</em> — crucial for when they inevitably pick up something they shouldn't</li>
+        <li><em>Stay</em> and <em>Leave it</em> — next level, but worth prioritizing early</li>
+      </ul>
+      <p>Keep sessions short — five to ten minutes, multiple times a day. Use a happy tone. Goldens are sensitive dogs and harsh corrections can set back progress significantly. Praise, treats, and play are your best tools.</p>
+
+      <h2 id="grooming">Grooming Basics</h2>
+      <p>That gorgeous golden coat requires regular upkeep:</p>
+      <ul>
+        <li><strong>Brush 3–4 times per week</strong> to prevent mats and reduce shedding</li>
+        <li><strong>Bathe once a month</strong> (or when they've rolled in something unpleasant)</li>
+        <li><strong>Trim nails every 3–4 weeks</strong></li>
+        <li><strong>Clean ears monthly</strong> and after water exposure</li>
+        <li><strong>Schedule annual dental cleanings</strong> with your vet, and brush teeth at home a few times a week</li>
+      </ul>
+
+      <hr />
+
+      <p>Golden Retrievers give back everything you put into them — and then some. The time you invest in their health, training, and care comes back to you in the form of a dog who is joyful, well-behaved, and deeply bonded to your family.</p>
+      <p><strong>Welcome to the Golden Retriever family.</strong> You're going to love every muddy, hair-covered, tail-wagging moment of it.</p>
+
+      <hr />
+
+      <h2 id="faq">Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <p class="faq-q">How much exercise does a Golden Retriever need per day?</p>
+        <p class="faq-a">Golden Retrievers need at least 1–2 hours of exercise daily, spread across walks, fetch, swimming, and playtime. Puppies should have shorter, more frequent sessions to protect their developing joints.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">When should I start training my Golden Retriever puppy?</p>
+        <p class="faq-a">Start training the day you bring your puppy home. The most critical socialization window is 8–16 weeks old — early exposure to people, sounds, and other dogs shapes a confident adult dog.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">What are the most common Golden Retriever health problems?</p>
+        <p class="faq-a">The most common health issues are hip dysplasia, cancer, ear infections, and allergies. Regular vet checkups and preventive care are the best way to catch and manage these conditions early.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">How often should I groom a Golden Retriever?</p>
+        <p class="faq-a">Brush 3–4 times per week, bathe once a month, clean ears monthly (and after swimming), and trim nails every 3–4 weeks.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">How long do Golden Retrievers live?</p>
+        <p class="faq-a">The average Golden Retriever lifespan is 10–12 years. Proper nutrition, regular exercise, and annual vet visits can help your Golden live a longer, healthier life.</p>
+      </div>
+
+    </article>
+
+    <aside>
+      <div class="sidebar-card">
+        <h4>📋 In This Article</h4>
+        <ul class="toc-list">
+          <li><a href="#health">Understanding Your Golden's Health</a></li>
+          <li><a href="#nutrition">Feeding Your Golden Right</a></li>
+          <li><a href="#exercise">Exercise Tips</a></li>
+          <li><a href="#training">Training Guide</a></li>
+          <li><a href="#grooming">Grooming Basics</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="sidebar-card">
+        <h4>🐾 More Articles</h4>
+        <ul class="related-list">
+          <li><a href="../blog.html">Best Exercise Activities for Goldens →</a></li>
+          <li><a href="../blog.html">Managing Shedding Season →</a></li>
+          <li><a href="../blog.html">Best Dog Foods in 2026 →</a></li>
+        </ul>
+      </div>
+      <div class="sidebar-card" style="background: linear-gradient(135deg,#F9D98B,#F0B84A); border:none;">
+        <h4 style="color:var(--dark);">🐕 Weekly Tips</h4>
+        <p style="font-size:.88rem; color:var(--brown); margin:8px 0 14px;">Get new guides delivered to your inbox every Monday.</p>
+        <a href="../index.html#newsletter" style="display:block; background:var(--brown); color:#fff; text-align:center; padding:10px; border-radius:50px; text-decoration:none; font-weight:600; font-size:.9rem;">Subscribe Free</a>
+      </div>
+    </aside>
+  </div>
+
+  <footer>
+    <div class="footer-logo">🐾 Golden Paws</div>
+    <p>Your go-to resource for everything Golden Retriever.</p>
+    <p style="margin-top:8px;"><a href="../index.html">Home</a> &nbsp;·&nbsp; <a href="../blog.html">Blog</a></p>
+    <p style="margin-top:16px; font-size:.8rem;">© 2026 Golden Paws. Made with 🐾 and lots of fetch.</p>
+  </footer>
+
+</body>
+</html>

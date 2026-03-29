@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Golden Paws — Everything Golden Retriever</title>
+  <meta name="description" content="Your go-to resource for Golden Retriever health, training, grooming, and care. Expert guides written for golden retriever lovers." />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold:       #D4872A;
+      --gold-light: #F5C96A;
+      --gold-pale:  #FDF6E3;
+      --brown:      #7A4A1E;
+      --dark:       #2C1A0E;
+      --text:       #3D2B1A;
+      --muted:      #8C6A4A;
+      --white:      #FFFFFF;
+      --radius:     12px;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--white);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--white);
+      border-bottom: 2px solid var(--gold-light);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 5%;
+      height: 70px;
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: var(--gold);
+      text-decoration: none;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .nav-logo span { font-size: 1.6rem; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--gold); }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, #FDF0D5 0%, #F9D98B 50%, #F0B84A 100%);
+      padding: 100px 5% 80px;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 40px;
+      min-height: 520px;
+    }
+    .hero-text { max-width: 560px; }
+    .hero-tag {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--white);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 4vw, 3.4rem);
+      color: var(--dark);
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 1.1rem;
+      color: var(--brown);
+      margin-bottom: 36px;
+      max-width: 480px;
+    }
+    .btn {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--white);
+      padding: 14px 32px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: background .2s, transform .2s;
+      box-shadow: 0 4px 18px rgba(212,135,42,.35);
+    }
+    .btn:hover { background: var(--brown); transform: translateY(-2px); }
+    .btn-outline {
+      background: transparent;
+      border: 2px solid var(--gold);
+      color: var(--gold);
+      box-shadow: none;
+      margin-left: 12px;
+    }
+    .btn-outline:hover { background: var(--gold); color: var(--white); }
+    .hero-image {
+      font-size: 10rem;
+      line-height: 1;
+      filter: drop-shadow(0 8px 24px rgba(0,0,0,.12));
+      flex-shrink: 0;
+    }
+
+    /* ── SECTION WRAPPER ── */
+    section { padding: 80px 5%; }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: var(--dark);
+      margin-bottom: 8px;
+    }
+    .section-sub {
+      color: var(--muted);
+      margin-bottom: 48px;
+      font-size: 1.05rem;
+    }
+
+    /* ── TOPICS GRID ── */
+    .topics { background: var(--gold-pale); }
+    .topics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+    .topic-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 28px 20px;
+      text-align: center;
+      border: 2px solid transparent;
+      transition: border-color .2s, transform .2s;
+      text-decoration: none;
+      color: var(--text);
+    }
+    .topic-card:hover { border-color: var(--gold-light); transform: translateY(-4px); }
+    .topic-icon { font-size: 2.4rem; margin-bottom: 12px; }
+    .topic-card h3 { font-size: 1rem; font-weight: 600; color: var(--dark); margin-bottom: 6px; }
+    .topic-card p { font-size: 0.85rem; color: var(--muted); }
+
+    /* ── FEATURED POSTS ── */
+    .posts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 28px;
+    }
+    .post-card {
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid #EDD9B0;
+      transition: transform .2s, box-shadow .2s;
+      text-decoration: none;
+      color: var(--text);
+      display: flex; flex-direction: column;
+    }
+    .post-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,.1); }
+    .post-thumb {
+      background: linear-gradient(135deg, var(--gold-light), var(--gold));
+      height: 160px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 4rem;
+    }
+    .post-body { padding: 24px; flex: 1; }
+    .post-tag {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+    .post-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      color: var(--dark);
+      line-height: 1.35;
+      margin-bottom: 10px;
+    }
+    .post-card p { font-size: 0.9rem; color: var(--muted); }
+    .post-meta { padding: 14px 24px; border-top: 1px solid #EDD9B0; font-size: 0.8rem; color: var(--muted); }
+
+    /* ── NEWSLETTER ── */
+    .newsletter {
+      background: linear-gradient(135deg, var(--brown), var(--dark));
+      text-align: center;
+    }
+    .newsletter h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: var(--gold-light);
+      margin-bottom: 12px;
+    }
+    .newsletter p { color: #C4A47A; margin-bottom: 32px; font-size: 1.05rem; }
+    .newsletter-form { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .newsletter-form input {
+      padding: 14px 20px;
+      border-radius: 50px;
+      border: none;
+      font-size: 1rem;
+      width: 300px;
+      outline: none;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--dark);
+      color: #9A7A5A;
+      text-align: center;
+      padding: 36px 5%;
+      font-size: 0.9rem;
+    }
+    footer a { color: var(--gold-light); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      color: var(--gold-light);
+      margin-bottom: 12px;
+    }
+
+    @media (max-width: 700px) {
+      .hero { flex-direction: column; text-align: center; padding: 60px 5%; }
+      .hero-image { font-size: 6rem; }
+      .hero p { margin: 0 auto 28px; }
+      nav { padding: 0 4%; }
+      .nav-links { gap: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo"><span>🐾</span> Golden Paws</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="#topics">Topics</a></li>
+      <li><a href="#newsletter">Newsletter</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-text">
+      <span class="hero-tag">🐕 Your Golden Resource</span>
+      <h1>Everything Your Golden Retriever Needs to Thrive</h1>
+      <p>From puppy training to senior care — expert guides, health tips, and heartwarming stories for golden retriever lovers.</p>
+      <a href="blog.html" class="btn">Read the Blog</a>
+      <a href="#topics" class="btn btn-outline">Browse Topics</a>
+    </div>
+    <div class="hero-image">🦮</div>
+  </section>
+
+  <!-- TOPICS -->
+  <section class="topics" id="topics">
+    <h2 class="section-title">Browse by Topic</h2>
+    <p class="section-sub">Everything you need, organized by what matters most.</p>
+    <div class="topics-grid">
+      <a href="blog.html" class="topic-card">
+        <div class="topic-icon">❤️</div>
+        <h3>Health & Wellness</h3>
+        <p>Common conditions, preventive care, and vet tips</p>
+      </a>
+      <a href="blog.html" class="topic-card">
+        <div class="topic-icon">🎓</div>
+        <h3>Training</h3>
+        <p>Positive reinforcement, commands, and behavior</p>
+      </a>
+      <a href="blog.html" class="topic-card">
+        <div class="topic-icon">✂️</div>
+        <h3>Grooming</h3>
+        <p>Coat care, bathing, ear cleaning, and more</p>
+      </a>
+      <a href="blog.html" class="topic-card">
+        <div class="topic-icon">🍖</div>
+        <h3>Nutrition</h3>
+        <p>Best foods, portion control, and diet advice</p>
+      </a>
+      <a href="blog.html" class="topic-card">
+        <div class="topic-icon">🏃</div>
+        <h3>Exercise & Play</h3>
+        <p>Activities, sports, and keeping Goldens happy</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- FEATURED POSTS -->
+  <section id="posts">
+    <h2 class="section-title">Latest from the Blog</h2>
+    <p class="section-sub">Fresh guides, tips, and stories — updated every week.</p>
+    <div class="posts-grid">
+      <a href="posts/new-owner-guide.html" class="post-card">
+        <div class="post-thumb">🐶</div>
+        <div class="post-body">
+          <p class="post-tag">Care Guide</p>
+          <h3>The New Owner's Complete Guide to Golden Retrievers</h3>
+          <p>Health, training, grooming, and nutrition — everything you need to know to raise a happy, healthy Golden.</p>
+        </div>
+        <div class="post-meta">March 2026 &nbsp;·&nbsp; 5 min read</div>
+      </a>
+      <div class="post-card" style="opacity:.55; pointer-events:none;">
+        <div class="post-thumb">🏃</div>
+        <div class="post-body">
+          <p class="post-tag">Exercise</p>
+          <h3>The Best Activities to Keep Your Golden Retriever Fit</h3>
+          <p>Swimming, fetch, hiking and more — coming soon.</p>
+        </div>
+        <div class="post-meta">Coming soon</div>
+      </div>
+      <div class="post-card" style="opacity:.55; pointer-events:none;">
+        <div class="post-thumb">✂️</div>
+        <div class="post-body">
+          <p class="post-tag">Grooming</p>
+          <h3>How to Manage Golden Retriever Shedding Season</h3>
+          <p>Tools, techniques, and schedules to stay on top of that gorgeous coat.</p>
+        </div>
+        <div class="post-meta">Coming soon</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter" id="newsletter">
+    <h2>Get Weekly Golden Tips</h2>
+    <p>New guides, care tips, and stories delivered to your inbox every Monday.</p>
+    <div class="newsletter-form">
+      <input type="email" placeholder="your@email.com" />
+      <a href="#" class="btn">Subscribe</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">🐾 Golden Paws</div>
+    <p>Your go-to resource for everything Golden Retriever.</p>
+    <p style="margin-top:8px;">
+      <a href="index.html">Home</a> &nbsp;·&nbsp;
+      <a href="blog.html">Blog</a> &nbsp;·&nbsp;
+      <a href="#topics">Topics</a>
+    </p>
+    <p style="margin-top:16px; font-size:.8rem;">© 2026 Golden Paws. Made with 🐾 and lots of fetch.</p>
+  </footer>
+
+</body>
+</html>
