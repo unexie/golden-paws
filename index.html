@@ -111,10 +111,16 @@
     }
     .btn-outline:hover { background: var(--gold); color: var(--white); }
     .hero-image {
-      font-size: 10rem;
-      line-height: 1;
-      filter: drop-shadow(0 8px 24px rgba(0,0,0,.12));
       flex-shrink: 0;
+    }
+    .hero-image img {
+      width: 380px;
+      max-width: 42vw;
+      height: 380px;
+      object-fit: cover;
+      border-radius: 50% 42% 50% 42%;
+      border: 6px solid var(--white);
+      box-shadow: 0 12px 48px rgba(0,0,0,.18);
     }
 
     /* ── SECTION WRAPPER ── */
@@ -141,7 +147,8 @@
     .topic-card {
       background: var(--white);
       border-radius: var(--radius);
-      padding: 28px 20px;
+      overflow: hidden;
+      padding: 0;
       text-align: center;
       border: 2px solid transparent;
       transition: border-color .2s, transform .2s;
@@ -149,9 +156,28 @@
       color: var(--text);
     }
     .topic-card:hover { border-color: var(--gold-light); transform: translateY(-4px); }
-    .topic-icon { font-size: 2.4rem; margin-bottom: 12px; }
+    .topic-card-img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+      display: block;
+    }
+    .topic-card-body { padding: 20px 16px 22px; }
+    .topic-icon { font-size: 2rem; margin-bottom: 8px; }
     .topic-card h3 { font-size: 1rem; font-weight: 600; color: var(--dark); margin-bottom: 6px; }
     .topic-card p { font-size: 0.85rem; color: var(--muted); }
+
+    /* ── PHOTO STRIP ── */
+    .photo-strip { padding: 0; overflow: hidden; }
+    .photo-strip-inner { display: flex; }
+    .photo-strip-inner img {
+      flex: 1;
+      min-width: 0;
+      height: 200px;
+      object-fit: cover;
+      transition: transform .4s;
+    }
+    .photo-strip-inner img:hover { transform: scale(1.04); z-index: 1; }
 
     /* ── FEATURED POSTS ── */
     .posts-grid {
@@ -172,9 +198,9 @@
     .post-thumb {
       background: linear-gradient(135deg, var(--gold-light), var(--gold));
       height: 160px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 4rem;
+      overflow: hidden;
     }
+    .post-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .post-body { padding: 24px; flex: 1; }
     .post-tag {
       font-size: 0.72rem;
@@ -235,10 +261,11 @@
 
     @media (max-width: 700px) {
       .hero { flex-direction: column; text-align: center; padding: 60px 5%; }
-      .hero-image { font-size: 6rem; }
+      .hero-image img { width: 240px; height: 240px; max-width: 80vw; }
       .hero p { margin: 0 auto 28px; }
       nav { padding: 0 4%; }
       .nav-links { gap: 1.2rem; }
+      .photo-strip-inner img { height: 120px; }
     }
   </style>
 </head>
@@ -264,7 +291,9 @@
       <a href="blog.html" class="btn">Read the Blog</a>
       <a href="#topics" class="btn btn-outline">Browse Topics</a>
     </div>
-    <div class="hero-image">🦮</div>
+    <div class="hero-image">
+      <img src="https://source.unsplash.com/800x800/?golden+retriever" alt="Happy Golden Retriever" />
+    </div>
   </section>
 
   <!-- TOPICS -->
@@ -273,32 +302,58 @@
     <p class="section-sub">Everything you need, organized by what matters most.</p>
     <div class="topics-grid">
       <a href="blog.html" class="topic-card">
-        <div class="topic-icon">❤️</div>
-        <h3>Health & Wellness</h3>
-        <p>Common conditions, preventive care, and vet tips</p>
+        <img class="topic-card-img" src="https://source.unsplash.com/400x240/?golden+retriever+vet" alt="Golden Retriever health" />
+        <div class="topic-card-body">
+          <div class="topic-icon">❤️</div>
+          <h3>Health & Wellness</h3>
+          <p>Common conditions, preventive care, and vet tips</p>
+        </div>
       </a>
       <a href="blog.html" class="topic-card">
-        <div class="topic-icon">🎓</div>
-        <h3>Training</h3>
-        <p>Positive reinforcement, commands, and behavior</p>
+        <img class="topic-card-img" src="https://source.unsplash.com/400x240/?dog+training+obedience" alt="Dog training" />
+        <div class="topic-card-body">
+          <div class="topic-icon">🎓</div>
+          <h3>Training</h3>
+          <p>Positive reinforcement, commands, and behavior</p>
+        </div>
       </a>
       <a href="blog.html" class="topic-card">
-        <div class="topic-icon">✂️</div>
-        <h3>Grooming</h3>
-        <p>Coat care, bathing, ear cleaning, and more</p>
+        <img class="topic-card-img" src="https://source.unsplash.com/400x240/?dog+grooming+brush" alt="Dog grooming" />
+        <div class="topic-card-body">
+          <div class="topic-icon">✂️</div>
+          <h3>Grooming</h3>
+          <p>Coat care, bathing, ear cleaning, and more</p>
+        </div>
       </a>
       <a href="blog.html" class="topic-card">
-        <div class="topic-icon">🍖</div>
-        <h3>Nutrition</h3>
-        <p>Best foods, portion control, and diet advice</p>
+        <img class="topic-card-img" src="https://source.unsplash.com/400x240/?dog+food+bowl+nutrition" alt="Dog nutrition" />
+        <div class="topic-card-body">
+          <div class="topic-icon">🍖</div>
+          <h3>Nutrition</h3>
+          <p>Best foods, portion control, and diet advice</p>
+        </div>
       </a>
       <a href="blog.html" class="topic-card">
-        <div class="topic-icon">🏃</div>
-        <h3>Exercise & Play</h3>
-        <p>Activities, sports, and keeping Goldens happy</p>
+        <img class="topic-card-img" src="https://source.unsplash.com/400x240/?golden+retriever+running+fetch" alt="Golden Retriever exercise" />
+        <div class="topic-card-body">
+          <div class="topic-icon">🏃</div>
+          <h3>Exercise & Play</h3>
+          <p>Activities, sports, and keeping Goldens happy</p>
+        </div>
       </a>
     </div>
   </section>
+
+  <!-- PHOTO STRIP -->
+  <div class="photo-strip">
+    <div class="photo-strip-inner">
+      <img src="https://source.unsplash.com/400x200/?golden+retriever+puppy" alt="Golden Retriever puppy" />
+      <img src="https://source.unsplash.com/400x200/?golden+retriever+outdoor+grass" alt="Golden Retriever outdoors" />
+      <img src="https://source.unsplash.com/400x200/?golden+retriever+water+lake" alt="Golden Retriever swimming" />
+      <img src="https://source.unsplash.com/400x200/?golden+retriever+portrait+face" alt="Golden Retriever portrait" />
+      <img src="https://source.unsplash.com/400x200/?golden+retriever+happy+smile" alt="Happy Golden Retriever" />
+    </div>
+  </div>
 
   <!-- FEATURED POSTS -->
   <section id="posts">
@@ -306,7 +361,9 @@
     <p class="section-sub">Fresh guides, tips, and stories — updated every week.</p>
     <div class="posts-grid">
       <a href="posts/new-owner-guide.html" class="post-card">
-        <div class="post-thumb">🐶</div>
+        <div class="post-thumb">
+          <img src="https://source.unsplash.com/600x320/?golden+retriever+puppy+owner" alt="Golden Retriever with owner" />
+        </div>
         <div class="post-body">
           <p class="post-tag">Care Guide</p>
           <h3>The New Owner's Complete Guide to Golden Retrievers</h3>
@@ -314,8 +371,10 @@
         </div>
         <div class="post-meta">March 2026 &nbsp;·&nbsp; 5 min read</div>
       </a>
-      <div class="post-card" style="opacity:.55; pointer-events:none;">
-        <div class="post-thumb">🏃</div>
+      <div class="post-card" style="opacity:.65; pointer-events:none;">
+        <div class="post-thumb">
+          <img src="https://source.unsplash.com/600x320/?golden+retriever+running+exercise" alt="Golden Retriever running" />
+        </div>
         <div class="post-body">
           <p class="post-tag">Exercise</p>
           <h3>The Best Activities to Keep Your Golden Retriever Fit</h3>
@@ -323,8 +382,10 @@
         </div>
         <div class="post-meta">Coming soon</div>
       </div>
-      <div class="post-card" style="opacity:.55; pointer-events:none;">
-        <div class="post-thumb">✂️</div>
+      <div class="post-card" style="opacity:.65; pointer-events:none;">
+        <div class="post-thumb">
+          <img src="https://source.unsplash.com/600x320/?dog+grooming+coat+brush" alt="Dog grooming" />
+        </div>
         <div class="post-body">
           <p class="post-tag">Grooming</p>
           <h3>How to Manage Golden Retriever Shedding Season</h3>
